@@ -1,0 +1,250 @@
+<br>
+<div fxLayout.lg="row" fxLayout.xs="column">
+
+  <div fxFlex.lg="600px" fxFlexOffset="10px">
+
+    <mat-card class="contactHead"><mat-card-title class="mattitle">Contact Information</mat-card-title></mat-card><br>
+    Please Enter the Contact information that needs to be displayed to the users in your APP. You could add multiple
+    locations in the map.<br><br>
+
+    <div class="bold">Map Your Business Locations
+      <span class="reqred"> *: </span>
+    </div><br>
+
+    <div fxLayout="row wrap">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+        <div class="bold">Location Name<span class="reqred">*:</span></div><br>
+      </div>
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+        <div><button class="btnbg" mat-flat-button>+ Add Location</button></div>
+      </div>
+    </div><br>
+
+    <div fxLayout="row wrap">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOrder.lg="2">
+        <button style="width: 200px; font-weight: 600" class="btnbg" mat-flat-button>
+          - Delete Location
+        </button>
+      </div>
+      <div class="media" fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOrder.lg="1">
+        <button class="yourbiz" mat-stroked-button>
+          Your Biz Name 1
+        </button>
+      </div>
+    </div><br>
+
+    <div fxLayout="row wrap">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtL9MmE75WPwcmiqhM8Tq3aXBx-zQZtw6yGg&usqp=CAU">
+      </div>
+    </div>
+
+    <div fxLayout="row wrap">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+        <div class="bg" style="font-weight: 600"><br>
+          <mat-icon>location_on</mat-icon>Your location
+        </div>
+      </div>
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+        <mat-form-field style=" padding-top: 20px; width: 220px" class="formHeight" appearance="outline">
+          <input matInput type="text" />
+          <mat-label>Search Locations Nearby You</mat-label>
+          <button class="searchbox" mat-icon-button>
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxFlexOffset="30px">
+    <form>
+      <mat-label class="label">Business Name <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" style="font-size: small" matInput placeholder="Your Biz Name Ltd Company">
+      </mat-form-field><br>
+      
+      <mat-label class="label">Address Line 1 <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+      
+      <mat-label class="label">Address Line 2 <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+      
+      <mat-label class="label">City/Town <span class="reqred">*: </span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+     
+      <mat-label class="label">State/Province <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+     
+      <mat-label class="label">Country <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+      
+      <mat-label class="label">Postal PIN code <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+     
+      <mat-label class="label">Business Phone <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field><br>
+      
+      <mat-label class="label">Official Email-ID <span class="reqred">*:</span></mat-label>&nbsp;
+      <mat-form-field class="formHeight" appearance="outline">
+        <input type="text" matInput>
+      </mat-form-field>
+      
+      <div fxLayout="row wrap">
+        <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="100px" fxFlex.xs="100" fxFlex.sm="100">
+          <br>
+          <button class="btnbg" mat-flat-button>VERIFY</button>
+        </div>
+        <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="100px" fxFlex.xs="100" fxFlex.sm="100">
+          <br>
+          <button class="btnbg" mat-flat-button>GET APP</button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+
+</div>
+
+<!-- <div fxLayout="row wrap" fxLayout.sm="column">
+  <div fxLayout="row wrap" fxFlex="50" fxLayoutGap="20px" fxLayout.xs="column" class="content">
+    <div>
+      <mat-card>
+        <div class="whitebg">contact Information</div>
+      </mat-card>
+      <div fxLayout="row wrap" style="padding-top: 10px">
+        Please Enter the Contact information that needs to be displayed to the
+        users in your APP. You could add multiple locations in the map.
+      </div>
+      <div style="padding-top: 10px" class="bold">
+        Map Your Business Locations
+        <a class="reqred"> *: </a>
+      </div>
+
+      <div fxLayout="row wrap">
+        <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+          Location Name<span class="reqred">*:</span>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+          <button style="width: 200px; font-weight: 600" class="btnbg" mat-flat-button>
+            + Add Location
+          </button>
+        </div>
+      </div>
+
+
+      <div fxLayout="row wrap">
+        <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+          <button style="font-weight: 600" class="yourbiz" mat-stroked-button>
+            Your Biz Name 1
+          </button>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+          <button style="width: 200px; font-weight: 600" class="btnbg" mat-flat-button>
+            - Delete Location
+          </button>
+        </div>
+      </div>
+
+      <div fxLayout="row wrap">
+        <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+          <mat-form-field style="padding-top: 20px; width: 220px" class="formHeight" appearance="outline">
+            <input matInput type="text" />
+            <mat-label>Search Locations Nearby You</mat-label>
+            <button class="searchbox" mat-icon-button>
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+          <div class="bg" style="font-weight: 600">
+            <mat-icon>location_on</mat-icon>Your location
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!--
+  <div fxLayout="row wrap" fxFlex="50">
+    <form>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Business Name <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" style="font-size: small" matInput placeholder="Your Biz Name Ltd Company">
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Address Line 1 <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Address Line 2 <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">City/Town <span class="reqred">*: </span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">State/Province <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Country <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Postal PIN code <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Business Phone <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <mat-label class="label">Official Email-ID <span class="reqred">*:</span></mat-label>&nbsp;
+        <mat-form-field class="formHeight" appearance="outline">
+          <input type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100">
+        <div style="padding-left: 27rem">
+          <button class="btnbg" mat-flat-button>VERIFY</button>
+        </div>
+      </div>
+      <div fxFlex.xs="100" fxFlex.sm="100" style="padding-left: 17rem">
+        <button class="btnbg" mat-flat-button>GET APP</button>
+      </div>
+    </form>
+  </div>
+-->

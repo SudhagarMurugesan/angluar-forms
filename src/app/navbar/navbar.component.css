@@ -1,0 +1,13 @@
+.mat-toolbar{
+background-color: #FF4DFF;
+font-size: medium;
+height: 2em;
+padding-top: -1em;
+}
+.mat-icon{
+    color: white;
+}
+
+.name{
+    color: white;
+}

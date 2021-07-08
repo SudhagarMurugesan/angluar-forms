@@ -1,0 +1,40 @@
+ <mat-toolbar fxFlex >
+    <div fxLayoutAlign="center end">
+      <button mat-icon-button >
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+    <img style="width: 40px; height: 40px;"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0uicRUdorEMgESEcM5zzrQbOm0TUcu8257A&usqp=CAU" />
+    &nbsp; <div class="name">
+      {{name}}
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="center">
+    </div>
+
+    <div class="name" fxLayout="row" fxLayoutAlign="end" fxHide.xs>
+      <button mat-icon-button>
+        <mat-icon>share</mat-icon>
+      </button>
+      <div style="padding-top: 5px;" class="name">
+        {{download}}
+      </div>
+      <button mat-icon-button>
+        <mat-icon>save_alt</mat-icon>
+      </button>
+      &nbsp;
+    </div>
+    <div fxHide.xs fxLayout> 
+      <mat-form-field style="color: white;">
+        <mat-label>Select Language</mat-label>
+        <mat-select>
+          <mat-option>None</mat-option>
+          <mat-option value="English">English</mat-option>
+          <mat-option value="Spanish">Spanish</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button style="padding-top: 12px;" mat-icon-button fxShow="false" fxHide.gt-sm="true">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
