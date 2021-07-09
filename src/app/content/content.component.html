@@ -1,9 +1,11 @@
 <br>
-<div fxLayout.lg="row" fxLayout.xs="column">
+<div fxLayout.lg="row" fxLayout.xs="column" class="font">
 
   <div fxFlex.lg="600px" fxFlexOffset="10px">
 
-    <mat-card class="contactHead"><mat-card-title class="mattitle">Contact Information</mat-card-title></mat-card><br>
+    <mat-card class="contactHead">
+      <mat-card-title class="mattitle">Contact Information</mat-card-title>
+    </mat-card><br>
     Please Enter the Contact information that needs to be displayed to the users in your APP. You could add multiple
     locations in the map.<br><br>
 
@@ -15,18 +17,18 @@
       <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
         <div class="bold">Location Name<span class="reqred">*:</span></div><br>
       </div>
-      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOffset.xs="20%">
         <div><button class="btnbg" mat-flat-button>+ Add Location</button></div>
       </div>
     </div><br>
 
     <div fxLayout="row wrap">
-      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOrder.lg="2">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOrder.lg="2" fxFlexOffset.xs="20%">
         <button style="width: 200px; font-weight: 600" class="btnbg" mat-flat-button>
           - Delete Location
         </button>
       </div>
-      <div class="media" fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOrder.lg="1">
+      <div class="media" fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOrder.lg="1" fxFlexOffset.xs="20%">
         <button class="yourbiz" mat-stroked-button>
           Your Biz Name 1
         </button>
@@ -34,7 +36,7 @@
     </div><br>
 
     <div fxLayout="row wrap">
-      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+      <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" fxFlexOffset.xs="15%">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtL9MmE75WPwcmiqhM8Tq3aXBx-zQZtw6yGg&usqp=CAU">
       </div>
     </div>
@@ -46,7 +48,7 @@
         </div>
       </div>
       <div fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
-        <mat-form-field style=" padding-top: 20px; width: 220px" class="formHeight" appearance="outline">
+        <mat-form-field  fxFlexOffset.xs="20%" style="padding-top: 20px; width: 220px" class="formHeight" appearance="outline">
           <input matInput type="text" />
           <mat-label>Search Locations Nearby You</mat-label>
           <button class="searchbox" mat-icon-button>
@@ -57,71 +59,101 @@
     </div>
   </div>
 
+
   <div fxFlex fxFlexOffset="30px">
-    <form>
-      <!-- <mat-label class="label">Business Name <span class="reqred">*:</span></mat-label>&nbsp; -->
-      <mat-form-field class="formHeight" appearance="outline">
-        <mat-label>Business Name</mat-label>
-        <input type="text" style="font-size: small" matInput placeholder="Enter your Business name">
-      </mat-form-field><br>
-      
-      <mat-label class="label">Address Line 1 <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-      
-      <mat-label class="label">Address Line 2 <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-      
-      <mat-label class="label">City/Town <span class="reqred">*: </span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-     
-      <mat-label class="label">State/Province <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-     
-      <mat-label class="label">Country <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-      
-      <mat-label class="label">Postal PIN code <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-     
-      <mat-label class="label">Business Phone <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field><br>
-      
-      <mat-label class="label">Official Email-ID <span class="reqred">*:</span></mat-label>&nbsp;
-      <mat-form-field class="formHeight" appearance="outline">
-        <input type="text" matInput>
-      </mat-form-field>
-      
+
+    <!-- <mat-label class="label">Business Name <span class="reqred">*:</span></mat-label>&nbsp; -->
+    <form [formGroup]="requiredForm" #formDirective="ngForm" >
       <div fxLayout="row wrap">
-        <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="100px" fxFlex.xs="100" fxFlex.sm="100">
-          <br>
-          <button class="btnbg" mat-flat-button>VERIFY</button>
-        </div>
-        <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="100px" fxFlex.xs="100" fxFlex.sm="100">
-          <br>
-          <button class="btnbg" mat-flat-button>GET APP</button>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Business Name<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="name" style="font-size: small" matInput placeholder="Enter your Business name">
+          <mat-error *ngIf="requiredForm.get('name').hasError('required')">
+            Business Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Address Line 1<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="address" style="font-size: small" matInput placeholder="Enter your Addres Line 1">
+          <mat-error *ngIf="requiredForm.get('address').hasError('required')">
+            Address Line 1 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Address Line 2<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="address1" style="font-size: small" matInput placeholder="Enter your Addres Line 2">
+          <mat-error *ngIf="requiredForm.get('address1').hasError('required')">
+            Address Line 2 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>City/Town<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="city" style="font-size: small" matInput placeholder="Enter your Name of City/Town">
+          <mat-error *ngIf="requiredForm.get('city').hasError('required')">
+            city name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>State/Province<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="state" style="font-size: small" matInput placeholder="Enter your Name of State/Province">
+          <mat-error *ngIf="requiredForm.get('state').hasError('required')">
+            state name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Country<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="country" style="font-size: small" matInput placeholder="Enter your Name of Country">
+          <mat-error *ngIf="requiredForm.get('country').hasError('required')">
+            country name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Postal PIN code<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="postal" style="font-size: small" matInput placeholder="Enter your Postal PIN code">
+          <mat-error *ngIf="requiredForm.get('postal').hasError('required')">
+            postal code is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Business Phone<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="phone" style="font-size: small" matInput placeholder="Enter your Business Phone ">
+          <mat-error *ngIf="requiredForm.get('phone').hasError('required')">
+            Phone Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
+          <mat-label>Official Email - ID<span class="reqred"> * : </span></mat-label>
+          <input type="text" formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" style="font-size: small" matInput placeholder="Enter your Official Email - ID">
+          <mat-error *ngIf="requiredForm.get('email').hasError('required')">
+            Email-ID is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="requiredForm.get('email').hasError('email')">Please enter a valid email address</mat-error>
+        </mat-form-field>
+
+        <div fxLayout="row wrap">
+          <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="50px" fxFlex.xs="100" fxFlex.sm="100">            
+            <button class="btnbg" mat-flat-button [disabled]="!enableSubmitBtn()">VERIFY</button>
+          </div>
+          <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="50px" fxFlex.xs="100" fxFlex.sm="100">
+            <br>
+            <button class="btnbg" mat-flat-button>GET APP</button>
+          </div>
         </div>
       </div>
     </form>
-    
+      
   </div>
 
-</div>
-
-<!-- <div fxLayout="row wrap" fxLayout.sm="column">
+  <!-- <div fxLayout="row wrap" fxLayout.sm="column">
   <div fxLayout="row wrap" fxFlex="50" fxLayoutGap="20px" fxLayout.xs="column" class="content">
     <div>
       <mat-card>
@@ -181,7 +213,7 @@
   </div>
 </div> -->
 
-<!--
+  <!--
   <div fxLayout="row wrap" fxFlex="50">
     <form>
       <div fxFlex.xs="100" fxFlex.sm="100">
