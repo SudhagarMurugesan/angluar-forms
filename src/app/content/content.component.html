@@ -63,7 +63,7 @@
   <div fxFlex fxFlexOffset="30px">
 
     <!-- <mat-label class="label">Business Name <span class="reqred">*:</span></mat-label>&nbsp; -->
-    <form [formGroup]="requiredForm" #formDirective="ngForm" >
+    <form [formGroup]="requiredForm">
       <div fxLayout="row wrap">
 
         <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
@@ -116,32 +116,49 @@
 
         <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
           <mat-label>Postal PIN code<span class="reqred"> * : </span></mat-label>
-          <input type="text" formControlName="postal" style="font-size: small" matInput placeholder="Enter your Postal PIN code">
-          <mat-error *ngIf="requiredForm.get('postal').hasError('required')">
+          <input type="text" [formControl]="PostalForm"  maxlength="6" #zipcode style="font-size: small" matInput placeholder="Enter your Postal PIN code">
+          <mat-error *ngIf="PostalForm.hasError('required') && PostalForm.hasError('pattern')">
             postal code is <strong>required</strong>
           </mat-error>
+          <mat-hint align="end">{{zipcode.value.length}}/6</mat-hint>
         </mat-form-field><br>
 
         <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
           <mat-label>Business Phone<span class="reqred"> * : </span></mat-label>
-          <input type="text" formControlName="phone" style="font-size: small" matInput placeholder="Enter your Business Phone ">
-          <mat-error *ngIf="requiredForm.get('phone').hasError('required')">
+          <input type="text" [formControl]="phoneFormControl" style="font-size: small" matInput placeholder="Enter your Business Phone ">
+         
+          <!-- <mat-error *ngIf="requiredForm.get('phone').hasError('required')">
+            Phone Number is <strong>required</strong>
+          </mat-error> -->
+             <mat-error *ngIf="phoneFormControl.hasError('required')">
             Phone Number is <strong>required</strong>
           </mat-error>
+          <mat-error *ngIf="phoneFormControl.hasError('pattern') && phoneFormControl.hasError('maxLength')&& !phoneFormControl.hasError('required')">
+            Enter a Valid Phone Number
+          </mat-error>
+          
         </mat-form-field><br>
 
         <mat-form-field fxFlex.lg="500px" fxFlex.xs="300px" class="formHeight" appearance="outline">
           <mat-label>Official Email - ID<span class="reqred"> * : </span></mat-label>
-          <input type="text" formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" style="font-size: small" matInput placeholder="Enter your Official Email - ID">
+          <input type="text" [formControl]="emailFormControl" style="font-size: small" matInput placeholder="Enter your Official Email - ID">
+          
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email-ID is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
+
+          <!-- <input type="text" formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" style="font-size: small" matInput placeholder="Enter your Official Email - ID">
+          
           <mat-error *ngIf="requiredForm.get('email').hasError('required')">
             Email-ID is <strong>required</strong>
           </mat-error>
-          <mat-error *ngIf="requiredForm.get('email').hasError('email')">Please enter a valid email address</mat-error>
+          <mat-error *ngIf="requiredForm.get('email').hasError('email')">Please enter a valid email address</mat-error> -->
         </mat-form-field>
 
         <div fxLayout="row wrap">
           <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="50px" fxFlex.xs="100" fxFlex.sm="100">            
-            <button class="btnbg" mat-flat-button [disabled]="!enableSubmitBtn()">VERIFY</button>
+            <button class="btnbg" mat-flat-button>VERIFY</button>
           </div>
           <div fxFlex="50" fxFlexOffset.lg="400px" fxFlexOffset.xs="50px" fxFlex.xs="100" fxFlex.sm="100">
             <br>
